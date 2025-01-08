@@ -3,7 +3,7 @@ import venueCardImg from "../assets/venue-card.png";
 
 const VenueCard = () => {
   return (
-    <div className="m-4 p-4 bg-white shadow-lg rounded-lg flex mx-40 justify-center">
+    <div className="m-4 p-4 bg-white shadow-2xl border rounded-lg flex mx-40 justify-center">
       <div className="w-1/2 ml-10">
         <img
           src={venueCardImg}

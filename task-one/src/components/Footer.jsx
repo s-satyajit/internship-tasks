@@ -6,7 +6,10 @@ const Footer = () => {
     <div className="m-auto" >
       <footer className="bg-gray-900 text-white py-14 w-screen">
         <div className="container mx-auto flex flex-wrap justify-between px-4">
-          <div className="w-full md:w-1/5 mb-6 md:mb-0"></div>
+          <div className="w-full md:w-1/5 mb-6 md:mb-0 px-10 ">
+            <h2 className="text-red-600"><span className="font-bold text-3xl" >mandap</span>.com</h2>
+            <p className="text-gray-700 text-sm">from matrimony.com group</p>
+          </div>
           <div className="w-full md:w-1/5 mb-6 md:mb-0">
             <h2 className="text-xl font-bold mb-4">Know about us</h2>
             <ul>

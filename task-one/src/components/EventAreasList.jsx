@@ -25,14 +25,12 @@ const eventAreas = [
 
 const EventAreasList = () => {
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" component="h2" className="my-4 font-bold">
-        3 Event Areas Available
-      </Typography>
+    <div className="">
+      <h2 className="text-lg font-bold" >3 Event Areas Available</h2>
       {eventAreas.map((area, index) => {
         return <EventAreaCard key={index} area={area} />;
       })}
-    </Container>
+    </div>
   );
 };
 

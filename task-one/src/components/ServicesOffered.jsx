@@ -19,23 +19,21 @@ const services = [
 
 const ServicesOffered = () => {
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" component="h2" className="my-4 font-bold">
-        Services Offered
-      </Typography>
-      {services.map((service, index) => {
-        return (
+    <div>
+      <div className="my-4 font-bold">Services Offered</div>
+      <div className="" >
+        {services.map((service, index) => (
           <Accordion key={index}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">{service.title}</Typography>
+              <div>{service.title}</div>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography variant="body1">{service.price}</Typography>
+              <div>{service.price}</div>
             </AccordionDetails>
           </Accordion>
-        );
-      })}
-    </Container>
+        ))}
+      </div>
+    </div>
   );
 };
 

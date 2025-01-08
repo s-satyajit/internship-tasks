@@ -1,11 +1,3 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
 import React from "react";
 import venue1img from "../assets/venues/venue-1.png";
 import venue2img from "../assets/venues/venue-2.png";
@@ -53,44 +45,28 @@ const recommendations = [
 
 const YouMayAlsoLike = () => {
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" component="h2" className="my-4 font-bold">
-        You May Also Like
-      </Typography>
-      <Grid container spacing={2}>
-        {recommendations.map((item, index) => {
-          return (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  image={item.image}
-                  alt={item.name}
-                  height="140"
-                  rating={item.rating}
-                  cost={item.cost}
-                  venue={item.location}
-                />
-                <CardContent>
-                  <Typography variant="h6" component="div">
-                    {item.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {item.location}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Rating: {item.rating}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Cost: {item.cost}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          );
-        })}
-      </Grid>
-    </Container>
+    <div className="mr-36">
+      <h2 className="my-4 font-bold">You May Also Like</h2>
+      <div className="" >
+        {recommendations.map((recommendation, index) => (
+          <div key={index} className="border rounded-lg my-4">
+            <div >
+              <img
+                src={recommendation.image}
+                alt="venue name"
+                className=" h-20 rounded-lg"
+              />
+              <div>
+                <div>⭐{recommendation.rating}</div>
+                <div>{recommendation.name}</div>
+                <div>{recommendation.location}</div>
+                <div>{recommendation.cost}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

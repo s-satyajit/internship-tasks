@@ -29,32 +29,18 @@ const albums = [
 
 const Album = () => {
   return (
-    <Container maxWidth="md">
-      <Typography variant="h4" component="h2" className="my-4 font-bold">
-        Albums
-      </Typography>
-      <Grid container spacing={2}>
-        {albums.map((album, index) => {
-          return (
-            <Grid item key={index} xs={12} sm={6} md={4}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={album.image}
-                  alt={album.name}
-                />
-                <CardContent>
-                  <Typography variant="subtitle-1" className="text-center">
-                    {album.name}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          );
-        })}
-      </Grid>
-    </Container>
+    <>
+      <div>Albums</div>
+      <div className="flex flex-wrap">
+        {albums.map((album, index) => (
+          <img
+            src={album.image}
+            alt={album.name}
+            className="w-72 rounded-lg m-5"
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
