@@ -45,7 +45,7 @@ const recommendations = [
 
 const YouMayAlsoLike = () => {
   return (
-    <div className="mr-36">
+    <div className="">
       <h2 className="my-4 font-bold">You May Also Like</h2>
       <div className="" >
         {recommendations.map((recommendation, index) => (
