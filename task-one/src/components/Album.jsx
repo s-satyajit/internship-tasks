@@ -29,18 +29,18 @@ const albums = [
 
 const Album = () => {
   return (
-    <>
-      <div>Albums</div>
+    <div className="my-6" >
+      <div className="text-3xl font-bold ml-4 my-2">Albums</div>
       <div className="flex flex-wrap">
         {albums.map((album, index) => (
           <img
             src={album.image}
             alt={album.name}
-            className="w-72 rounded-lg m-5"
+            className="w-56 rounded-lg m-5"
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

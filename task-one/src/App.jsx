@@ -9,9 +9,9 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden " >
       <Header />
-      <div className="px-4 py-8 mx-6">
+      <div className="px-4 py-8 mx-40">
         <VenueCard />
         <EventPresentation />
         <AdditionalDetails />

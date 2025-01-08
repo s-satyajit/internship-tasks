@@ -19,8 +19,8 @@ const services = [
 
 const ServicesOffered = () => {
   return (
-    <div>
-      <div className="my-4 font-bold">Services Offered</div>
+    <div className="mr-10 my-8" >
+      <div className="mx-4 font-bold text-3xl my-4">Services Offered</div>
       <div className="" >
         {services.map((service, index) => (
           <Accordion key={index}>

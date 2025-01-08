@@ -45,22 +45,22 @@ const recommendations = [
 
 const YouMayAlsoLike = () => {
   return (
-    <div className="">
-      <h2 className="my-4 font-bold">You May Also Like</h2>
+    <div className="my-8">
+      <h2 className="my-4 text-3xl font-bold">You May Also Like</h2>
       <div className="" >
         {recommendations.map((recommendation, index) => (
           <div key={index} className="border rounded-lg my-4">
-            <div >
+            <div className="m-4 flex justify-between" >
               <img
                 src={recommendation.image}
                 alt="venue name"
-                className=" h-20 rounded-lg"
-              />
-              <div>
-                <div>⭐{recommendation.rating}</div>
-                <div>{recommendation.name}</div>
-                <div>{recommendation.location}</div>
-                <div>{recommendation.cost}</div>
+                className=" h-28 w-28 rounded-lg mx-2 "
+                />
+              <div className="mx-2" >
+                <div className="text-sm " >⭐{recommendation.rating}</div>
+                <div className="text-sm font-bold" >{recommendation.name}</div>
+                <div className="text-xs " >{recommendation.location}</div>
+                <div className="text-sm font-bold " >{recommendation.cost}</div>
               </div>
             </div>
           </div>

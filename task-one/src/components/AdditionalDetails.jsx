@@ -40,12 +40,12 @@ const AdditionalDetails = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Amenities</h2>
+      <h2 className="text-3xl font-bold mb-4">Amenities</h2>
       <ul className="list-none space-y-2">
         {amenitiesList}
       </ul>
 
-      <h2 className="text-2xl font-bold mb-4 mt-4">Other Information</h2>
+      <h2 className="text-3xl font-bold mb-4 mt-4">Other Information</h2>
       <ul className="list-none space-y-2">
         {otherInformation.map((item, index) => (
           <li key={index} className="flex items-center">

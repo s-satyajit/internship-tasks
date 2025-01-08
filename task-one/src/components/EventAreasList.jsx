@@ -25,11 +25,13 @@ const eventAreas = [
 
 const EventAreasList = () => {
   return (
-    <div className="">
-      <h2 className="text-lg font-bold" >3 Event Areas Available</h2>
-      {eventAreas.map((area, index) => {
-        return <EventAreaCard key={index} area={area} />;
-      })}
+    <div className="my-8 ">
+      <h2 className="text-3xl ml-4 font-bold ">3 Event Areas Available</h2>
+      <div className="flex flex-row" >
+        {eventAreas.map((area, index) => {
+          return <EventAreaCard key={index} area={area} />;
+        })}
+      </div>
     </div>
   );
 };

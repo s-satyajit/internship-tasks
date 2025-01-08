@@ -90,23 +90,27 @@ const Reviews = () => {
         </div>
       </div>
       <hr></hr>
-      <h2 className="font-bold text-2xl m-4">About Venue</h2>
-      <div className="mt-4 mb-4 ml-4 flex items-center">
-        <div className="flex space-x-1">
-          {reviews.map((review, index) => (
-            <div key={index} className="flex items-start space-x-4 mb-4">
+      <div className="my-8" >
+        <h2 className="font-bold text-2xl m-4">About Venue</h2>
+        <div className="mt-4 mb-4 ml-4 flex items-center">
+          <div className="flex space-x-1">
+            {reviews.map((review, index) => (
+              <div key={index} className="flex items-start space-x-4 mb-4 ">
                 <img
-                src={review.profileImage}
-                alt="profile"
-                className="w-11 h-11 rounded-full border"
+                  src={review.profileImage}
+                  alt="profile"
+                  className="w-11 h-11 rounded-full border"
                 />
                 <div>
-                    <div className="font-bold">{review.VenueName}</div>
-                    <div className="text-gray-500 text-sm">{review.joinedDate}</div>
-                    <div className="mt-2">{review.message}</div>
+                  <div className="font-bold">{review.VenueName}</div>
+                  <div className="text-gray-500 text-sm">
+                    {review.joinedDate}
+                  </div>
+                  <div className="mt-2 mr-64">{review.message}</div>
                 </div>
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

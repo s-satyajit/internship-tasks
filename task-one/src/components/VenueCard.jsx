@@ -3,7 +3,7 @@ import venueCardImg from "../assets/venue-card.png";
 
 const VenueCard = () => {
   return (
-    <div className="m-4 p-4 bg-white shadow-2xl border rounded-lg flex mx-40 justify-center">
+    <div className="m-4 p-4 bg-white shadow-2xl border rounded-lg flex justify-center">
       <div className="w-1/2 ml-10">
         <img
           src={venueCardImg}
@@ -19,14 +19,14 @@ const VenueCard = () => {
           </p>
           <p className="text-gray-800 mb-2">⭐ 4.5 - No reviews yet</p>
           <p className="text-gray-800">Cost per plate: 400 - 600</p>
-        <div className="mt-4 flex space-x-2">
-          <button className="bg-red-600 text-white px-4 py-2 rounded">
-            Check Availability
-          </button>
-          <button className="border border-gray-600 text-red-600 px-4 py-2 rounded">
-            View Contact Details
-          </button>
-        </div>
+          <div className="mt-4 flex space-x-2">
+            <button className="bg-red-600 text-white px-4 py-2 rounded">
+              Check Availability
+            </button>
+            <button className="border border-gray-600 text-red-600 px-4 py-2 rounded">
+              View Contact Details
+            </button>
+          </div>
         </div>
       </div>
     </div>

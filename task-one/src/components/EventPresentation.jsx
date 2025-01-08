@@ -1,13 +1,12 @@
 import React from "react";
-import EventAreasList from "./EventAreasList";
-import EventAreaCard from "./EventAreaCard";
-import ServicesOffered from "./ServicesOffered";
 import Album from "./Album";
+import EventAreasList from "./EventAreasList";
+import ServicesOffered from "./ServicesOffered";
 import YouMayAlsoLike from "./YouMayAlsoLike";
 
 const EventPresentation = () => {
     return (
-        // <div className="px-4 py-8 mx-6">
+         <div className="container">
             <div className="flex flex-wrap" >
                 <div className="w-full md:w-3/4">
                     <EventAreasList />
@@ -18,7 +17,7 @@ const EventPresentation = () => {
                     <YouMayAlsoLike />
                 </div>
             </div>
-        // </div>
+         </div>
     )
 }
 
