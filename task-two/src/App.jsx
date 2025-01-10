@@ -1,35 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="bg-slate-950 h-screen">
+      <nav className="flex justify-between items-center p-4 bg-slate-500">
+        <div className="font-bold text-3xl">
+          <span className="text-white bg-red-500 px-1 rounded-tr-xl" >Eva</span>
+          <span className="text-black ml-1 relative">tril</span>
+        </div>
+        <ul className="hidden md:flex space-x-4">
+          <li className="px-2">Home</li>
+          <li className="px-2">About us</li>
+          <li className="px-2">Contact us</li>
+        </ul>
+        <div className="md:hidden">
+          <a href="#">&#8801;</a>
+        </div>
+      </nav>
+    </div>
+  );
 }
 
-export default App
+export default App;
