@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const  [firstname, setFirstname]  = useState("");
-  const  [lastname, setLastname]  = useState("");
-  const  [email, setEmail]  = useState("");
-  const  [contact, setContact]  = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
