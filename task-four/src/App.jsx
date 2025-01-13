@@ -1,51 +1,58 @@
-import React, { useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 
 const App = () => {
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const onHandleChange = (e) => {
-    const {name, value} = e.target
-    setState((prevProps) => ({
-      ...prevProps,
-      [value]: name
-    }))
-  }
-
-  const onHandleSubmit = (e) => {
-    e.preventDefault();
-    console.log(state)
+  const onSubmit = (data) => {
+    console.log(data)
   }
 
   return (
     <>
       <div>
-        <form onSubmit={onHandleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)} >
           <div>
             <label>Email: </label>
             <input
               type="email"
               name="email"
-              value={state.email}
               placeholder="Enter your email here"
-              onChange={onHandleChange}
-            />
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                  message: "Email is not valid"
+                }
+              })}
+              />
+              {errors.email && <p>{errors.email.message}</p>}
           </div>
           <div>
             <label>Password: </label>
             <input
               type="password"
               name="password"
-              value={state.password}
               placeholder="Enter your password here"
-              onChange={onHandleChange}
-            />
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password should be atleast 6 characters"
+                }
+              })}
+            /> 
+            {errors.password && <p>{errors.password.message}</p>}
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Login</button>
         </form>
       </div>
     </>
   );
 };
+
+export default App;
