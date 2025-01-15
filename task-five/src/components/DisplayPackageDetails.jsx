@@ -34,23 +34,55 @@ const PackageDetails = () => {
   if (!packageDetails) return <div>No details found for this package.</div>;
 
   return (
-    <div>
-      <h2>Package Details</h2>
-      <p>Name: {packageDetails.code}</p>
-      <img src={packageDetails.images} alt={packageDetails.name} />
-      <h3>Items</h3>
-      <ul>
-        {packageDetails.items.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price}
-            <img src={item.images} alt={item.name} />
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+      <div className="bg-white shadow-lg rounded-lg p-6 max-w-lg w-full">
+        <h2 className="text-3xl font-bold mb-6 text-center">Package Details</h2>
+        <img
+          src={packageDetails.images}
+          alt={packageDetails.name}
+          className="w-full h-64 object-cover mb-4 rounded-lg shadow-lg"
+        />
+        <ul className="list-disc list-inside space-y-2 mb-6">
+          <li>
+            <span className="font-medium">Name:</span> {packageDetails.name}
           </li>
-        ))}
-      </ul>
-      <p>Name: {packageDetails.name}</p>
-      <p>Type: {packageDetails.packageType}</p>
-      <p>Price: {packageDetails.price}</p>
-      <p>Segment: {packageDetails.segmentType}</p>
+          <li>
+            <span className="font-medium">Code:</span> {packageDetails.code}
+          </li>
+          <li>
+            <span className="font-medium">Price:</span> {packageDetails.price}
+          </li>
+          <li>
+            <span className="font-medium">Type:</span>{" "}
+            {packageDetails.packageType}
+          </li>
+          <li>
+            <span className="font-medium">Segment:</span>{" "}
+            {packageDetails.segmentType}
+          </li>
+        </ul>
+        <h3 className="text-xl font-bold mb-4">Items</h3>
+        <ul className="space-y-4">
+          {packageDetails.items.map((item) => (
+            <li
+              key={item.id}
+              className="border rounded-lg p-4 shadow-lg flex items-center"
+            >
+              <img
+                src={item.images}
+                alt={item.name}
+                className="w-24 h-24 object-cover rounded-lg mr-4"
+              />
+              <div>
+                <p className="text-lg font-semibold">{item.name}</p>
+                <p className="text-sm">
+                  <span className="font-medium">Price:</span> {item.price}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
