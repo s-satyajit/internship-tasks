@@ -1,11 +1,11 @@
-import Settings from "./components/Settings"
+import Settings from "./components/Settings";
 
 function App() {
   return (
     <>
-    <Settings />
+      <Settings />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
