@@ -23,8 +23,9 @@ const usePackage = () => {
         console.log("Fetched data:", data);
 
         const packageIds = data.map((pkg) => pkg.id);
+
         const detailsPromises = packageIds.map(async (id) => {
-          await new Promise((res) => setTimeout(res, 100)); // Adding delay
+          await new Promise((res) => setTimeout(res, 100));
           const res = await fetch(
             `https://backbone.evatril.in/api/v1/package/${id}`
           );
