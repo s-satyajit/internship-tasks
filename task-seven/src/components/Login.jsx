@@ -1,11 +1,11 @@
-import React, {useContext, useState} from "react";
+import React, { useState, useContext } from "react";
 import UserContext from "../context/UserContext";
 
 const Login = () => {
-
+  
   const [username, setUsername] = useState(null)
   const [password, setPassword] = useState(null)
-
+  
   const {setUser} = useContext(UserContext)
 
   const handleSubmit = (e) => {
