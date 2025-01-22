@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { useContext } from "react";
 import WeatherContext from "./WeatherContext";
 
 const WeatherContextProvider = ({children}) => {
