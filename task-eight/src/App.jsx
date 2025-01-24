@@ -1,6 +1,5 @@
-import react from "react"
-import WeatherPage from "./components/WeatherPage"
 import CitiesPage from "./components/CitiesPage"
+import WeatherPage from "./components/WeatherPage"
 
 function App() {
   
