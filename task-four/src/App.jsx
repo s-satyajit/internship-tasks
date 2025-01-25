@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import JobsDisplay from './components/jobsDisplay';
-import EmailPage from './components/EmailPage';
+import React, { useState } from "react";
+import JobsDisplay from "./components/jobsDisplay";
+import EmailPage from "./components/EmailPage";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
