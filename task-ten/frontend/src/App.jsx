@@ -1,39 +1,26 @@
-import './App.css'
-import { useState, useEffect } from 'react'
-import axios from "axios"
+import { useContext } from "react";
+import "./App.css";
+import Query from "./hooks/Query";
+import ProductContext from "./context/ProductContext";
 
 function App() {
-
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(false)
-
-  useEffect(() => {
-    (async() => {
-      try{
-        const response = await axios.get('/api/products')
-        console.log(response.data)
-        setProducts(response.data)
-        setLoading(false)
-      } catch(error) {
-        setLoading(false)
-        setError(true)
-      }
-    })()
-  }, [])
-
-  if(loading) return <h1>Loading...</h1>
-
-  if(error) {
-    return <h1>Something went wrong!</h1>
-  }
+  const { search, setSearch } = useContext(ProductContext);
+  const { products, loading, error } = Query(`/api/products?search=${search}`);
 
   return (
     <>
       <h1>API Handling in React</h1>
-      <h2>Number of products are: {products.length}</h2>
+      <input
+        type="text"
+        placeholder="Search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {loading && <h1>Loading...</h1>}
+      {error && <h1>Something Went Wrong</h1>}
+      {!loading && !error && <h2>Number of products are: {products.length}</h2>}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
