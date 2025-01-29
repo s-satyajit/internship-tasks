@@ -3,7 +3,15 @@ import { useContext, useEffect } from "react";
 import ProductContext from "../context/ProductContext";
 
 const Query = (urlPath) => {
-  const { products, setProducts, setLoading, setError, search, loading, error } = useContext(ProductContext);
+  const {
+    products,
+    setProducts,
+    setLoading,
+    setError,
+    search,
+    loading,
+    error,
+  } = useContext(ProductContext);
 
   useEffect(() => {
     (async () => {
