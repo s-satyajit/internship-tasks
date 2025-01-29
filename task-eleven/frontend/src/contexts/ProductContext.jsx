@@ -4,7 +4,7 @@ import useProducts from "../hooks/useProducts";
 export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
-  const { products, loading, addProducts } = useProducts();
+  const { products, loading, addProducts } = useProducts('/api/products');
   const [cart, setCart] = useState(() => {
     try {
       const savedCart = localStorage.getItem('cart')
