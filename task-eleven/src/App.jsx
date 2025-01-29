@@ -1,17 +1,25 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import DisplayProduct from "./pages/DisplayProducts"
-import Cart from './pages/Cart'
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router"
+import AppLayout from "./layout/app-layout";
+import DisplayProduct from "./pages/DisplayProducts";
+import Cart from "./pages/Cart";
 
-function App() {
+const App = () => {
+
+  const router = createBrowserRouter([
+    {
+      path:'/',
+      element: <AppLayout />,
+      children: [
+        {path: '/', element: <DisplayProduct />},
+        {path: 'cart', element: <Cart />}
+      ]
+    }
+  ])
 
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<DisplayProduct />} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
-    </Router>
+    <RouterProvider router={router} />
   )
 }
 
-export default App
+export default App;

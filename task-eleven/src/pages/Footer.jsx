@@ -1,10 +1,13 @@
 import React from "react";
 
 const Footer = () => {
-    return (
-        <>
-        </>
-    )
-}
+  return (
+    <footer className="bg-gray-800 text-white p-4 mx-auto">
+      <div className="container mx-auto text-center">
+        <p>&copy; 2025 E-Commerce Platform. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
