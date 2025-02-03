@@ -3,7 +3,7 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.post("/api/products", (req, res) => {
+app.get("/api/products", (req, res) => {
   const products = [
     {
       id: 1,
