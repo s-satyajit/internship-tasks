@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Receipt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .receipt-container {
+            width: 70%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .logo-section {
+            flex: 1;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+
+        .company-details {
+            flex: 2;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px 0 5px;
+            font-size: 23px; 
+            color: #333;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .recipient {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        table th, table td {
+            padding: 8px;
+            border: 1px solid #f55253; 
+        }
+
+        table th {
+            background-color: #f55253; 
+            color: #fff; 
+            border: 1px solid #f55253; 
+        }
+
+        table td {
+            border: 1px solid #f0f0f0; 
+        }
+
+        .details table td {
+            background-color: #fafafa; 
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 70px;
+        }
+
+        .thank-you {
+            flex: 1;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .summary-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .summary-details p {
+            width: 120%;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 100px;
+        }
+
+        .summary-label {
+            flex: 1;
+            text-align: left;
+            
+        }
+
+        .summary-value {
+            flex: 1;
+            text-align: left;
+            padding-left: 20px; 
+        }
+
+        .note {
+            text-align: center;
+            margin-top: 70px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .underline::after {
+            content: '';
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            border-bottom: 2px solid #000;
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 70%;
+            height: 45%; 
+            background: url('./image/Evatril.png') no-repeat;
+            background-size: contain; 
+            background-position: center;
+            opacity: 0.08;
+            filter: grayscale(100%);
+            z-index: -1;
+            transform: translate(-50%, -50%) rotate(-35deg); 
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <div class="watermark"></div>
+        <div class="header">
+            <div class="logo-section">
+                <img src="./image/Evatril.png" alt="Evatril Logo" class="logo">
+                <h1>Evatril Pvt. Ltd.</h1>
+                <p>Plot No. - 9429, Elegence Society, Unit - 35 <br> Badagada, Bhubaneswar</p>
+            </div>
+            <div class="company-details">
+            </div>
+        </div>
+        
+        <h2>Payment Receipt</h2>
+
+        <div class="flex-container">
+            <div class="recipient">
+                <p><strong>Recipient:</strong> Subash Chandra Khatoi</p>
+                <p><strong>Contact:</strong> 9348051518</p>
+                <p><strong>Address:</strong> Badagada, Bhubaneswar</p>
+            </div>
+            <div class="details">
+                <table>
+                    <tr>
+                        <th>Receipt No: </th>
+                        <th>#REC-30225377</th>
+                    </tr>
+                    <tr>
+                        <td>Transaction Date: </td>
+                        <td>27 October, 2025</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="order-details">
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Payment Method</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td>21350212</td>
+                    <td>Online</td>
+                    <td>Rs. 20,000</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer-container">
+            <div class="thank-you">
+                <p>Thanks for your payment!</p>
+            </div>
+            <div class="summary-details">
+                <p><strong class="summary-label">Total Amount Due</strong> <span class="summary-value">: Rs. 1,00,000</span></p>
+                <p><strong class="summary-label">Amount Received</strong> <span class="summary-value">: Rs. 20,000</span></p>
+                <p><strong class="summary-label">Balance Due</strong> <span class="summary-value">: Rs. 80,000</span></p>
+            </div>
+        </div>
+
+        <div class="note">
+            <p>Note: This receipt is computer-generated. No signature is required.</p>
+        </div>
+    </div>
+</body>
+</html>
