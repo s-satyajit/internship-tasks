@@ -1,6 +1,6 @@
 import React from "react";
 
-const Categories = () => {
+const useBlog = () => {
     return (
         <>
         
@@ -8,4 +8,4 @@ const Categories = () => {
     )
 }
 
-export default Categories;
+export default useBlog;
