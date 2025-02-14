@@ -15,8 +15,8 @@ const BlogPage = () => {
         <div className="grid grid-cols-6">
           <div className="col-span-4">
             <BlogContent />
-        <Button />
-        <p className="pt-2 text-gray-700">#categoryHashtag</p>
+            <Button />
+            <p className="pt-2 text-gray-700">#categoryHashtag</p>
           </div>
           <div className="col-span-2">
             <BlogList />

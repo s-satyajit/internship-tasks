@@ -1,6 +1,6 @@
 import react from 'react'
 
-const HeroSection = () => {
+const BlogPostPreview = () => {
     return (
         <>
         
@@ -8,4 +8,4 @@ const HeroSection = () => {
     )
 }
 
-export default HeroSection;
+export default BlogPostPreview;
