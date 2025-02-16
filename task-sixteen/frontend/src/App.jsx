@@ -1,12 +1,20 @@
-import React from "react"
+import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { BlogProvider } from "./context/BlogProvider";
+import BlogPage from "./pages/BlogPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
-
   return (
-    <>
-      <h1 className="text-3xl text-pink-700">App</h1>
-    </>
-  )
+    <BlogProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog/:slug" element={<BlogPage />} />
+        </Routes>
+      </Router>
+    </BlogProvider>
+  );
 }
 
-export default App
+export default App;
