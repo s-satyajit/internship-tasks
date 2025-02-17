@@ -1,96 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import BlogContext from "../../context/BlogContext";
 
 const BlogList = () => {
+  const { blog } = useContext(BlogContext);
+
   return (
     <>
-      <div className="bg-gray-200 p-8">
-        <div className="border-b-2 pb-3 border-black">RECENT POSTS</div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
+      <div className="border-b-2 pb-3 border-black">RECENT POSTS</div>
+      {blog.map((blog) => (
+        <div key={blog.id} className="bg-gray-200 p-8">
+          <div className="flex justify-between gap-4 my-6">
+            <div>
+              <img className="h-auto w-48" src={blog.image1} />
+            </div>
+            <div>
+              <p className="font-semibold">{blog.title}</p>
+              <p className="py-1">{blog.date}</p>
+            </div>
           </div>
         </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        <div className="flex justify-between gap-4 my-6">
-          <div>
-            <img
-              className="h-auto w-48"
-              src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-            />
-          </div>
-          <div>
-            <p className="font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p className="py-1">Feb 13, 2025</p>
-          </div>
-        </div>
-        
-      </div>
+      ))}
     </>
   );
 };

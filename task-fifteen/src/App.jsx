@@ -1,20 +1,17 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BlogPage from "./pages/BlogPage";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import BlogPage from "./pages/BlogPage"; // Ensure BlogPage is imported
 import Home from "./pages/HomePage";
 
-function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      children: [
-        { path: "blog", element: <BlogPage /> },
-        { path: "home", element: <Home /> },
-      ],
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
-}
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog/:id" element={<BlogPage />} /> {/* Use BlogPage for blog routes */}
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

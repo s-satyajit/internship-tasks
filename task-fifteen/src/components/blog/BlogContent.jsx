@@ -1,48 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect} from "react";
+import { useParams } from "react-router-dom";
+import BlogContext from "../../context/BlogContext";
 
 const BlogContent = () => {
-  return (
-    <>
-      <div className="">
-        <img
-          className="w-200 pb-5"
-          src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-        />
-        <div className="w-200 py-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          consectetur dolorum ipsam laudantium animi eligendi doloremque in,
-          quae quod molestiae, velit et nam assumenda facere mollitia. Provident
-          autem libero iure sapiente ducimus! Tenetur, nemo consequuntur,
-          aspernatur sequi optio alias fugiat illo maxime quas eum fuga
-          distinctio quia eligendi recusandae expedita nobis sint id deserunt
-          facilis quaerat quod necessitatibus voluptatem nam sunt! Illo
-          inventore in quis architecto eveniet voluptatum commodi ad esse enim
-          placeat repellendus ipsum, blanditiis incidunt autem eaque nemo
-          assumenda dolore voluptates quos dolores minus. Atque omnis quisquam
-          hic, ea neque maxime at illum ipsam fugiat sapiente voluptate. Saepe!
-        </div>
-      </div>
-      <div className="">
-        <img
-          className="w-200 py-5"
-          src="https://www.inkcraft.hocud.com/wp-content/uploads/woman-traveling-in-lisbon-portugal-1024x684.jpg"
-        />
+  const { id } = useParams();
+  const { blog, updatedBlog, setUpdatedBlog } = useContext(BlogContext);
 
-        <div className="w-200 py-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          consectetur dolorum ipsam laudantium animi eligendi doloremque in,
-          quae quod molestiae, velit et nam assumenda facere mollitia. Provident
-          autem libero iure sapiente ducimus! Tenetur, nemo consequuntur,
-          aspernatur sequi optio alias fugiat illo maxime quas eum fuga
-          distinctio quia eligendi recusandae expedita nobis sint id deserunt
-          facilis quaerat quod necessitatibus voluptatem nam sunt! Illo
-          inventore in quis architecto eveniet voluptatum commodi ad esse enim
-          placeat repellendus ipsum, blanditiis incidunt autem eaque nemo
-          assumenda dolore voluptates quos dolores minus. Atque omnis quisquam
-          hic, ea neque maxime at illum ipsam fugiat sapiente voluptate. Saepe!
-        </div>
-      </div>
-    </>
+  useEffect(() => {
+    if (blog && blog.length > 0) {
+      const selectedBlog = blog.find((blog) => blog.id === parseInt(id));
+      setUpdatedBlog(selectedBlog);
+    }
+  }, [blog, id]);
+
+  if (!updatedBlog) {
+    return <div>Loading...</div>;
+  }
+  // console.log(updatedBlog.title)
+
+  return (
+    <div key={updatedBlog.id}>
+
+      <p className="text-center pb-10 text-sm text-gray-700">{updatedBlog.date}</p>
+      <div className="w-200 py-5">{updatedBlog.paragraph1}</div>
+      <img className="w-200 pb-5" src={updatedBlog.image1} alt="Blog Image 1" />
+      <div className="w-200 py-5">{updatedBlog.paragraph2}</div>
+      <img className="w-200 pb-5" src={updatedBlog.image2} alt="Blog Image 2" />
+    </div>
   );
 };
 
